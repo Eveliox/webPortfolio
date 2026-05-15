@@ -5,13 +5,13 @@ export const personal = {
   email: "eveliogonzalez9@icloud.com",
   github: "https://github.com/Eveliox",
   linkedin: "https://linkedin.com/in/eveliogonzalez",
-  resume: "/resume.pdf",
+  resume: "/Evelio_Gonzalez_Resume_new.pdf",
 };
 
 export const hero = {
   tagline:
     "Computer Science student at Florida International University building thoughtful software.",
-  status: "Currently seeking Summer 2026 software engineering internships.",
+  status: "Currently seeking Summer 2027 software engineering internships.",
 };
 
 export const about =

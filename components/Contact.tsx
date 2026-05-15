@@ -28,7 +28,7 @@ export function Contact() {
 
         <Reveal>
           <p className="text-lg md:text-xl leading-[1.7] text-ink dark:text-ink-dark max-w-prose">
-            Open to internship opportunities for Summer 2026. The fastest way to
+            Open to internship opportunities for Summer 2027. The fastest way to
             reach me is email — I read everything.
           </p>
         </Reveal>

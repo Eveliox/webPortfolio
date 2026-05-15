@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s · Evelio Gonzalez",
   },
   description:
-    "Computer Science student at Florida International University building thoughtful software. Currently seeking Summer 2026 software engineering internships.",
+    "Computer Science student at Florida International University building thoughtful software. Currently seeking Summer 2027 software engineering internships.",
   applicationName: "Evelio Gonzalez",
   authors: [{ name: "Evelio Gonzalez" }],
   creator: "Evelio Gonzalez",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: "https://eveliogonzalez.com",
     title: "Evelio Gonzalez — Computer Science Student & Software Engineer",
     description:
-      "Computer Science student at FIU building thoughtful software. Seeking Summer 2026 software engineering internships.",
+      "Computer Science student at FIU building thoughtful software. Seeking Summer 2027 software engineering internships.",
     siteName: "Evelio Gonzalez",
   },
   twitter: {

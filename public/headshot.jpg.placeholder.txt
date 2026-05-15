@@ -1,0 +1,2 @@
+Add your headshot here as `headshot.jpg` (recommended: square crop, ~600x600, < 200KB after compression).
+Once you drop the file in, you can delete this placeholder.

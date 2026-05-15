@@ -1,0 +1,2 @@
+Add your resume here as `resume.pdf`.
+Once you drop the file in, you can delete this placeholder.

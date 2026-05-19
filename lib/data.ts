@@ -67,7 +67,8 @@ export type Project = {
   description: string;
   tech: string[];
   highlights: string[];
-  github: string;
+  github?: string;
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -108,6 +109,17 @@ export const projects: Project[] = [
       "Aggregates and normalizes listing data from multiple sources for comparable analysis.",
     ],
     github: "https://github.com/Eveliox/Real-Estate-Market-Analyzer",
+  },
+  {
+    name: "Azul Web Development Studio",
+    description:
+      "A web agency I founded and built end-to-end, from brand and site to client delivery.",
+    tech: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
+    highlights: [
+      "Designed and shipped the studio's brand, marketing site, and client intake flow.",
+      "Operate the studio independently — handling discovery, design, build, and delivery for every engagement.",
+    ],
+    liveUrl: "https://azulwebdev.com/",
   },
 ];
 

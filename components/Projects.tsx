@@ -19,17 +19,24 @@ export function Projects() {
         </div>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline dark:bg-hairline-dark border border-hairline dark:border-hairline-dark">
-          {projects.map((project, i) => (
+          {projects.map((project, i) => {
+            const href = project.liveUrl ?? project.github;
+            const isLive = Boolean(project.liveUrl);
+            return (
             <li
               key={project.name}
               className="bg-paper dark:bg-paper-dark transition-colors duration-300 hover:bg-paper/60 dark:hover:bg-[#15151450]"
             >
               <Reveal delay={i * 0.05}>
                 <a
-                  href={project.github}
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${project.name} on GitHub`}
+                  aria-label={
+                    isLive
+                      ? `${project.name} — visit live site`
+                      : `${project.name} on GitHub`
+                  }
                   className="group block h-full p-8 md:p-10"
                 >
                   <div className="flex items-start justify-between gap-4">
@@ -66,7 +73,8 @@ export function Projects() {
                 </a>
               </Reveal>
             </li>
-          ))}
+            );
+          })}
         </ul>
       </div>
     </section>

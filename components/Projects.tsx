@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
@@ -39,12 +40,23 @@ export function Projects() {
                   }
                   className="group block h-full p-8 md:p-10"
                 >
+                  {project.image && (
+                    <div className="relative mb-8 aspect-[16/10] w-full overflow-hidden border border-hairline dark:border-hairline-dark bg-paper dark:bg-paper-dark">
+                      <Image
+                        src={project.image.src}
+                        alt={project.image.alt}
+                        fill
+                        sizes="(min-width: 768px) 40vw, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  )}
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-serif text-xl md:text-2xl text-ink dark:text-ink-dark leading-tight">
                       {project.name}
                     </h3>
                     <ArrowUpRight
-                      className="h-4 w-4 mt-1 text-muted dark:text-muted-dark group-hover:text-sumi group-hover:-translate-y-px group-hover:translate-x-px transition-all duration-300"
+                      className="h-4 w-4 mt-1 text-muted dark:text-muted-dark group-hover:text-sumi dark:group-hover:text-sumi-dark group-hover:-translate-y-px group-hover:translate-x-px transition-all duration-300"
                       aria-hidden="true"
                     />
                   </div>

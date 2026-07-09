@@ -63,10 +63,12 @@ export const viewport: Viewport = {
 
 const themeScript = `
 (function() {
+  var el = document.documentElement;
+  el.classList.remove('no-js');
   try {
     var stored = localStorage.getItem('theme');
     var theme = stored === 'dark' || stored === 'light' ? stored : 'light';
-    if (theme === 'dark') document.documentElement.classList.add('dark');
+    if (theme === 'dark') el.classList.add('dark');
   } catch (_) {}
 })();
 `;
@@ -79,7 +81,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${shippori.variable} ${jetbrains.variable}`}
+      className={`no-js ${inter.variable} ${shippori.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>

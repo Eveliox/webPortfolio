@@ -1,6 +1,7 @@
 import { FileDown, Github, Linkedin, Mail } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
+import { EmailLink, EmailAddress } from "./EmailLink";
 import { personal } from "@/lib/data";
 
 const socials = [
@@ -29,21 +30,18 @@ export function Contact() {
         <Reveal>
           <p className="text-lg md:text-xl leading-[1.7] text-ink dark:text-ink-dark max-w-prose">
             Open to internship opportunities for Summer 2027. The fastest way to
-            reach me is email — I read everything.
+            reach me is email. I read everything.
           </p>
         </Reveal>
 
         <Reveal delay={0.08}>
-          <a
-            href={`mailto:${personal.email}`}
-            className="group mt-10 inline-flex items-baseline gap-3 font-serif text-2xl md:text-3xl text-ink dark:text-ink-dark hover:text-sumi dark:hover:text-sumi transition-colors"
-          >
+          <EmailLink className="group mt-10 inline-flex items-baseline gap-3 font-serif text-2xl md:text-3xl text-ink dark:text-ink-dark hover:text-sumi dark:hover:text-sumi-dark transition-colors">
             <Mail
-              className="h-5 w-5 translate-y-1 text-muted dark:text-muted-dark group-hover:text-sumi transition-colors"
+              className="h-5 w-5 translate-y-1 text-muted dark:text-muted-dark group-hover:text-sumi dark:group-hover:text-sumi-dark transition-colors"
               aria-hidden="true"
             />
-            {personal.email}
-          </a>
+            <EmailAddress />
+          </EmailLink>
         </Reveal>
 
         <Reveal delay={0.16}>

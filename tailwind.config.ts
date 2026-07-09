@@ -15,13 +15,22 @@ const config: Config = {
         },
         ink: {
           DEFAULT: "#1A1A1A",
+          soft: "#333333",
           dark: "#EDEDE8",
+          "soft-dark": "#C4C4BF",
         },
         muted: {
           DEFAULT: "#6B6B6B",
           dark: "#888885",
         },
-        sumi: "#8B2635",
+        sumi: {
+          DEFAULT: "#8B2635",
+          dark: "#C64A5C",
+        },
+        gold: {
+          DEFAULT: "#B8860B",
+          dark: "#D4A94A",
+        },
         hairline: {
           DEFAULT: "#E5E5E0",
           dark: "#2A2A28",

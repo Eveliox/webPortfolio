@@ -23,8 +23,21 @@ export function Enso({ className, size = 120 }: EnsoProps) {
           />
           <feDisplacementMap in="SourceGraphic" scale="1.4" />
         </filter>
+        <style>{`
+          @media (prefers-reduced-motion: no-preference) {
+            .enso-path {
+              stroke-dasharray: 320;
+              stroke-dashoffset: 320;
+              animation: enso-draw 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+            }
+            @keyframes enso-draw {
+              to { stroke-dashoffset: 0; }
+            }
+          }
+        `}</style>
       </defs>
       <path
+        className="enso-path"
         d="M 95 38
            C 110 58, 100 96, 70 102
            C 38 108, 16 86, 18 58

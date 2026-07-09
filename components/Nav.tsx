@@ -28,7 +28,7 @@ export function Nav() {
       >
         <a
           href="#top"
-          className="font-serif text-sm tracking-wide text-ink dark:text-ink-dark hover:text-sumi dark:hover:text-sumi transition-colors"
+          className="font-serif text-sm tracking-wide text-ink dark:text-ink-dark hover:text-sumi dark:hover:text-sumi-dark transition-colors"
         >
           {personal.name}
         </a>

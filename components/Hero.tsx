@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowUpRight, FileDown, Github, Linkedin, Mail } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { Enso } from "./Enso";
@@ -73,20 +72,9 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <div className="flex items-center gap-4 md:gap-5">
-            <h1 className="font-serif text-4xl md:text-5xl leading-[1.15] tracking-tight text-ink dark:text-ink-dark">
-              {personal.name}
-            </h1>
-            <Image
-              src="/spider-lily.svg"
-              alt=""
-              width={56}
-              height={56}
-              className="h-12 w-12 md:h-14 md:w-14 shrink-0 opacity-80"
-              aria-hidden="true"
-              priority
-            />
-          </div>
+          <h1 className="font-serif text-4xl md:text-5xl leading-[1.15] tracking-tight text-ink dark:text-ink-dark">
+            {personal.name}
+          </h1>
         </Reveal>
 
         <Reveal delay={0.12}>

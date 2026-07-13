@@ -10,7 +10,7 @@ export const personal = {
   email: `${emailParts.user}@${emailParts.domain}`,
   github: "https://github.com/Eveliox",
   linkedin: "https://linkedin.com/in/eveliogonzalez",
-  resume: "/Evelio_Gonzalez_Resume_new.pdf",
+  resume: "/Evelio_Gonzalez_Resume_1FSU.pdf",
 };
 
 export const hero = {

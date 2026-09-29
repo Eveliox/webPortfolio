@@ -20,9 +20,9 @@ export function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="py-32 md:py-48"
+      className="content-section"
     >
-      <div className="mx-auto max-w-3xl px-6 md:px-10">
+      <div className="mx-auto max-w-5xl px-6 md:px-10">
         <div id="contact-heading">
           <SectionHeading index="06 — Contact" title="Let's talk." />
         </div>
@@ -35,7 +35,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <EmailLink className="group mt-10 inline-flex items-baseline gap-3 font-serif text-2xl md:text-3xl text-ink dark:text-ink-dark hover:text-sumi dark:hover:text-sumi-dark transition-colors">
+          <EmailLink className="contact-email group mt-10 inline-flex items-baseline gap-3 font-serif text-2xl md:text-3xl text-ink dark:text-ink-dark hover:text-sumi dark:hover:text-sumi-dark transition-colors">
             <Mail
               className="h-5 w-5 translate-y-1 text-muted dark:text-muted-dark group-hover:text-sumi dark:group-hover:text-sumi-dark transition-colors"
               aria-hidden="true"

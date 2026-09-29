@@ -1,8 +1,8 @@
 "use client";
 
-import { ArrowUpRight, FileDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, ArrowUpRight, FileDown, Github, Linkedin, Mail } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { Enso } from "./Enso";
+import { Landscape } from "./Landscape";
 import { EmailLink } from "./EmailLink";
 import { hero, personal } from "@/lib/data";
 
@@ -49,7 +49,7 @@ export function Hero() {
     <section
       id="top"
       aria-label="Introduction"
-      className="relative min-h-[88vh] flex items-center pt-32 pb-32 md:pt-40 md:pb-40"
+      className="hero-section"
     >
       <span
         aria-hidden="true"
@@ -58,39 +58,37 @@ export function Hero() {
         {personal.nameKatakana}
       </span>
 
-      <Enso
-        aria-hidden="true"
-        className="pointer-events-none absolute right-6 md:right-16 top-24 md:top-28 text-sumi/35 dark:text-sumi/40"
-        size={140}
-      />
-
-      <div className="mx-auto w-full max-w-3xl px-6 md:px-10">
+      <div className="hero-layout">
+      <div className="hero-copy">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted dark:text-muted-dark mb-8">
-            {personal.location}
+            SOFTWARE ENGINEER / {personal.location}
           </p>
         </Reveal>
 
         <Reveal delay={0.05}>
-          <h1 className="font-serif text-4xl md:text-5xl leading-[1.15] tracking-tight text-ink dark:text-ink-dark">
-            {personal.name}
+          <h1 className="hero-name font-serif">
+            Evelio<span className="block">Gonzalez<span className="text-sumi dark:text-sumi-dark">.</span></span>
           </h1>
         </Reveal>
 
         <Reveal delay={0.12}>
-          <p className="mt-8 max-w-prose text-lg md:text-xl leading-[1.7] text-ink dark:text-ink-dark">
+          <p className="mt-7 max-w-lg text-base md:text-lg leading-[1.8] text-muted dark:text-muted-dark">
             {hero.tagline}
           </p>
         </Reveal>
 
         <Reveal delay={0.18}>
-          <p className="mt-4 max-w-prose text-base leading-[1.7] text-muted dark:text-muted-dark">
+          <p className="availability mt-6 max-w-sm text-xs leading-[1.8]">
             {hero.status}
           </p>
         </Reveal>
 
+        <Reveal delay={0.21}>
+          <a href="#projects" className="primary-link mt-8">Explore my work <ArrowDown size={16} aria-hidden="true" /></a>
+        </Reveal>
         <Reveal delay={0.24}>
-          <ul className="mt-12 flex flex-wrap gap-x-6 gap-y-3 font-mono text-sm">
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-3 font-mono text-sm">
             {ctas.map((cta) => {
               const Icon = cta.icon;
               if (cta.kind === "email") {
@@ -129,6 +127,9 @@ export function Hero() {
           </ul>
         </Reveal>
       </div>
+      <Reveal delay={0.15} className="hero-art"><Landscape /></Reveal>
+      </div>
+      <div className="hero-footnote"><span>THOUGHTFUL SOFTWARE. PURPOSEFUL DETAILS.</span><a href="#about">SCROLL TO DISCOVER <ArrowDown size={13} aria-hidden="true" /></a></div>
     </section>
   );
 }

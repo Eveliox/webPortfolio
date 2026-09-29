@@ -8,9 +8,9 @@ export function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="py-32 md:py-48"
+      className="content-section"
     >
-      <div className="mx-auto max-w-3xl px-6 md:px-10">
+      <div className="mx-auto max-w-5xl px-6 md:px-10">
         <div id="about-heading">
           <SectionHeading index="01 — About" title="A note on what I do." />
         </div>

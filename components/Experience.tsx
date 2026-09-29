@@ -7,9 +7,9 @@ export function Experience() {
     <section
       id="work"
       aria-labelledby="work-heading"
-      className="py-32 md:py-48"
+      className="content-section"
     >
-      <div className="mx-auto max-w-3xl px-6 md:px-10">
+      <div className="mx-auto max-w-5xl px-6 md:px-10">
         <div id="work-heading">
           <SectionHeading index="02 — Work" title="Where I've spent my hours." />
         </div>

@@ -1,24 +1,16 @@
 import { Reveal } from "./Reveal";
 
-type SectionHeadingProps = {
-  index: string;
-  title: string;
-};
+const characters: Record<string, string> = { "01": "私", "02": "歩", "03": "作", "04": "技", "05": "学", "06": "縁" };
 
-export function SectionHeading({ index, title }: SectionHeadingProps) {
+export function SectionHeading({ index, title }: { index: string; title: string }) {
   return (
     <Reveal>
-      <div className="mb-16 md:mb-20">
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted dark:text-muted-dark mb-3">
-          {index}
-        </p>
-        <h2 className="font-serif text-2xl md:text-3xl leading-tight tracking-tight text-ink dark:text-ink-dark">
-          {title}
-        </h2>
-        <span
-          aria-hidden="true"
-          className="mt-6 block h-px w-12 bg-ink/30 dark:bg-ink-dark/30"
-        />
+      <div className="section-heading">
+        <div>
+          <p className="section-index">{index}</p>
+          <h2 className="font-serif text-3xl md:text-[2.6rem] leading-[1.3] tracking-tight">{title}</h2>
+        </div>
+        <span className="section-character" lang="ja" aria-hidden="true">{characters[index.slice(0, 2)]}</span>
       </div>
     </Reveal>
   );

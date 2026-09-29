@@ -6,11 +6,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://eveliogonzalez.com"),
   title: {
-    default: "Evelio Gonzalez — Computer Science Student & Software Engineer",
+    default: "Evelio Gonzalez — Software Engineer",
     template: "%s · Evelio Gonzalez",
   },
   description:
-    "Computer Science student at Florida International University building thoughtful software. Currently seeking Summer 2027 software engineering internships.",
+    "FIU Computer Science graduate and M.S. Information Technology student at Florida State, building thoughtful software. Currently seeking Summer 2027 software engineering internships.",
   applicationName: "Evelio Gonzalez",
   authors: [{ name: "Evelio Gonzalez" }],
   creator: "Evelio Gonzalez",
@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     "Computer Science",
     "FIU",
     "Florida International University",
+    "FSU",
+    "Florida State University",
     "Software Engineering Internship",
     "Full Stack Developer",
     "Backend Engineer",
@@ -29,16 +31,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://eveliogonzalez.com",
-    title: "Evelio Gonzalez — Computer Science Student & Software Engineer",
+    title: "Evelio Gonzalez — Software Engineer",
     description:
-      "Computer Science student at FIU building thoughtful software. Seeking Summer 2027 software engineering internships.",
+      "FIU CS graduate and FSU M.S. IT student building thoughtful software. Seeking Summer 2027 software engineering internships.",
     siteName: "Evelio Gonzalez",
   },
   twitter: {
     card: "summary_large_image",
     title: "Evelio Gonzalez",
     description:
-      "Computer Science student at FIU building thoughtful software.",
+      "FIU CS graduate and FSU M.S. IT student building thoughtful software.",
   },
   robots: {
     index: true,

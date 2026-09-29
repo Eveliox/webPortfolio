@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { personal, hero } from "@/lib/data";
 
 export const runtime = "edge";
-export const alt = `${personal.name} — Computer Science Student & Software Engineer`;
+export const alt = `${personal.name} — Software Engineer`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

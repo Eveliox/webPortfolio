@@ -41,26 +41,36 @@ export function About() {
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted dark:text-muted-dark mb-4">
               Education
             </p>
-            <p className="font-serif text-lg md:text-xl text-ink dark:text-ink-dark">
-              {education.school}
-            </p>
-            <p className="mt-1 text-base text-muted dark:text-muted-dark">
-              {education.degree} · {education.graduation}
-            </p>
-            <p className="mt-6 font-mono text-xs uppercase tracking-[0.25em] text-muted dark:text-muted-dark mb-3">
-              Relevant Coursework
-            </p>
-            <ul className="flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm text-ink dark:text-ink-dark">
-              {education.coursework.map((course, i) => (
-                <li key={course} className="flex items-center gap-4">
-                  <span>{course}</span>
-                  {i < education.coursework.length - 1 && (
-                    <span
-                      aria-hidden="true"
-                      className="text-muted/60 dark:text-muted-dark/60"
-                    >
-                      ·
-                    </span>
+            <ul className="space-y-8">
+              {education.map((ed) => (
+                <li key={ed.school}>
+                  <p className="font-serif text-lg md:text-xl text-ink dark:text-ink-dark">
+                    {ed.school}
+                  </p>
+                  <p className="mt-1 text-base text-muted dark:text-muted-dark">
+                    {ed.degree} · {ed.graduation}
+                  </p>
+                  {ed.coursework && (
+                    <>
+                      <p className="mt-6 font-mono text-xs uppercase tracking-[0.25em] text-muted dark:text-muted-dark mb-3">
+                        Relevant Coursework
+                      </p>
+                      <ul className="flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm text-ink dark:text-ink-dark">
+                        {ed.coursework.map((course, i, all) => (
+                          <li key={course} className="flex items-center gap-4">
+                            <span>{course}</span>
+                            {i < all.length - 1 && (
+                              <span
+                                aria-hidden="true"
+                                className="text-muted/60 dark:text-muted-dark/60"
+                              >
+                                ·
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </>
                   )}
                 </li>
               ))}

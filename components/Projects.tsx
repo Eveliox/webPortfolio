@@ -26,7 +26,11 @@ export function Projects() {
             return (
             <li
               key={project.name}
-              className="bg-paper dark:bg-paper-dark transition-colors duration-300 hover:bg-paper/60 dark:hover:bg-[#15151450]"
+              className={`${
+                projects.length % 2 === 1 && i === projects.length - 1
+                  ? "md:col-span-2 "
+                  : ""
+              }bg-paper dark:bg-paper-dark transition-colors duration-300 hover:bg-paper/60 dark:hover:bg-[#15151450]`}
             >
               <Reveal delay={i * 0.05}>
                 <a

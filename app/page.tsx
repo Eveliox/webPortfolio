@@ -16,7 +16,7 @@ const jsonLd = {
   email: personal.email,
   url: "https://eveliogonzalez.com",
   sameAs: [personal.github, personal.linkedin],
-  jobTitle: "Computer Science Student",
+  jobTitle: "Software Engineer",
   description: hero.tagline,
   address: {
     "@type": "PostalAddress",

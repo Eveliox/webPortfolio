@@ -1,5 +1,5 @@
 export const emailParts = {
-  user: "eveliogonzalez9",
+  user: "eveliogonzalez5",
   domain: "icloud.com",
 };
 
@@ -10,29 +10,46 @@ export const personal = {
   email: `${emailParts.user}@${emailParts.domain}`,
   github: "https://github.com/Eveliox",
   linkedin: "https://linkedin.com/in/eveliogonzalez",
-  resume: "/Evelio_Gonzalez_Resume_1FSU.pdf",
+  resume: "/Evelio_Gonzalez_Resume_SWE.pdf",
 };
 
 export const hero = {
   tagline:
-    "Computer Science student at Florida International University building thoughtful software.",
+    "FIU Computer Science graduate and M.S. Information Technology student at Florida State, building thoughtful software.",
   status: "Currently seeking Summer 2027 software engineering internships.",
 };
 
 export const about =
-  "I'm a CS student at FIU graduating Summer 2026, focused on full-stack development, backend systems, and clean architecture. I currently intern at Caley Insurance, shipping full-stack features across React, Node.js, Supabase, and AWS EC2. Earlier this year I led a team of 10 engineers through a production build, and I've written ETL pipelines handling real-time market data. I care a lot about writing code that's actually maintainable. Outside of school I work as an IT & AV technician on campus, which keeps me sharp on the systems side.";
+  "I graduated Cum Laude with a B.A. in Computer Science from FIU in August 2026 and I'm now pursuing an M.S. in Information Technology at Florida State. My focus is full-stack development, backend systems, and data pipelines. This summer I interned at Caley Insurance, where I owned six internal applications end to end on React, Node.js, Supabase, and AWS EC2. Before that I built observability and ML forecasting models on Databricks for Miami-Dade County's IT department. On my own time I've been building a PubMed RAG system with grounded citations, a geospatial ETL pipeline for transmission planning, and a safety-first options trading system. I care a lot about writing code that's actually maintainable, and two years as an IT & AV technician at FIU keep me sharp on the systems side.";
 
-export const education = {
-  school: "Florida International University",
-  degree: "Bachelor of Arts in Computer Science",
-  graduation: "Expected Graduation: Summer 2026",
-  coursework: [
-    "Systems Programming",
-    "Software Engineering 1",
-    "Data Structures",
-    "Operating Systems",
-  ],
+export type Education = {
+  school: string;
+  degree: string;
+  graduation: string;
+  location: string;
+  coursework?: string[];
 };
+
+export const education: Education[] = [
+  {
+    school: "Florida State University",
+    degree: "M.S. in Information Technology",
+    graduation: "Expected August 2027",
+    location: "Tallahassee, FL",
+  },
+  {
+    school: "Florida International University",
+    degree: "B.A. in Computer Science · Cum Laude",
+    graduation: "August 2026",
+    location: "Miami, FL",
+    coursework: [
+      "Systems Programming",
+      "Software Engineering 1",
+      "Data Structures",
+      "Operating Systems",
+    ],
+  },
+];
 
 export type Experience = {
   role: string;
@@ -44,14 +61,26 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    role: "Full Stack Engineer, Intern",
+    role: "Full-Stack Engineering Intern",
     company: "Caley Insurance",
-    period: "Jun 2026 — Present",
+    period: "Jun 2026 — Aug 2026",
     location: "Miami, FL",
     bullets: [
-      "Ship features end-to-end across a React/Vite/Tailwind frontend, Node.js API layer, Supabase (PostgreSQL + Edge Functions), and AWS EC2 infrastructure. Own each change from spec through PR to production deploy.",
-      "Built internal tools that removed recurring manual work: an automated SMS pipeline for policyholder outreach, a compliance system tracking state licensing requirements, and agent onboarding/offboarding workflows that provision and revoke access on day one and last day.",
-      "Design and deploy customer-facing lead-generation surfaces (landing pages, quote-intake forms, follow-up flows) that feed the agency's sales pipeline.",
+      "Owned six internal applications end to end for 50+ employees across five offices: scoped requirements with agents and office managers, built in React/Vite/Node on Supabase and AWS EC2, reviewed pull requests, and shipped multiple production releases per month.",
+      "Replaced manual policyholder outreach with an SMS platform that pushes hundreds of messages per campaign. Spreadsheet import, reusable templates, two-way threading, and automatic opt-out tracking keep agents compliant without hand-scrubbing lists.",
+      "Cut 20+ hours of monthly administrative work by automating state-license compliance tracking and employee onboarding/offboarding.",
+      "Turned static marketing pages into a lead channel with quote-intake forms and automated follow-up that routes prospects into the sales pipeline.",
+    ],
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Miami-Dade County CITD",
+    period: "Jan 2026 — May 2026",
+    location: "Miami, FL",
+    bullets: [
+      "Built observability models on Databricks with a five-person Agile team (sprint planning, code reviews, stand-ups), turning IT system and operational data into analytical insights for the county's Communications, Information and Technology Department.",
+      "Developed AI/ML prediction models in Python to forecast system behavior and surface trends, supporting data-driven decisions for county IT operations.",
+      "Cleaned, transformed, and analyzed large datasets with Python and SQL in Databricks notebooks, and presented findings and recommendations to county stakeholders and mentors.",
     ],
   },
   {
@@ -68,12 +97,12 @@ export const experience: Experience[] = [
   {
     role: "IT & Audio Visual Technician",
     company: "Florida International University",
-    period: "Apr 2024 — Present",
+    period: "Apr 2024 — May 2026",
     location: "Miami, FL",
     bullets: [
-      "Support IT and AV infrastructure across campus. First-line troubleshooting for faculty, staff, and students, with escalation to central IT for anything upstream of the endpoint.",
-      "Configure and maintain classroom AV: room control systems, remote-conferencing equipment, and AV-over-IP networks that keep hybrid classes running.",
-      "Administer Active Directory accounts and use SCCM to push hardware inventory, patches, and software packages across campus endpoints.",
+      "Supported IT and AV infrastructure across campus. First-line troubleshooting for faculty, staff, and students, with escalation to central IT for anything upstream of the endpoint.",
+      "Configured and maintained classroom AV: room control systems, remote-conferencing equipment, and AV-over-IP networks that keep hybrid classes running.",
+      "Administered Active Directory accounts and used SCCM to push hardware inventory, patches, and software packages across campus endpoints.",
     ],
   },
 ];
@@ -92,6 +121,60 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    name: "Relay",
+    description:
+      "A transmission planning coordination tool built at ShellHacks 2026 for Sperry Tech's \"Gridlock\" challenge. It maps planned grid projects across utilities and flags the ones that should be coordinated.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "PostGIS",
+      "React",
+      "TypeScript",
+      "MapLibre",
+      "GitHub Actions",
+      "DigitalOcean",
+    ],
+    highlights: [
+      "Built an ETL pipeline that extracted 252 transmission projects from 700+ pages of utility planning PDFs with pdfplumber, then geocoded them by matching substation names to OpenStreetMap data through the Overpass API.",
+      "Wrote an overlap engine that flags nearby cross-utility projects by haversine distance and ranks them by line proximity and in-service date gap. It found 39 coordination opportunities and matched the sponsor's reference results exactly.",
+      "Designed the PostGIS schema and transactional loader behind a FastAPI REST API, with GitHub Actions CI testing against a PostGIS container before automated DigitalOcean deploys.",
+    ],
+    github: "https://github.com/felipetrujilllo/Shellhacks-2026",
+    liveUrl: "https://relaygrid.us",
+  },
+  {
+    name: "Biomedical Literature RAG System",
+    description:
+      "A full-stack research assistant that searches PubMed and answers questions only from the retrieved papers, with numbered citations back to each source.",
+    tech: [
+      "FastAPI",
+      "Next.js",
+      "TypeScript",
+      "Chroma",
+      "sentence-transformers",
+      "Ollama",
+      "Docker",
+    ],
+    highlights: [
+      "Searches PubMed via the Entrez API, embeds papers into a Chroma vector store with sentence-transformers, and streams answers token by token from a local Ollama LLM. Every claim maps to a clickable PubMed citation.",
+      "Built against swappable Protocol interfaces for the LLM, embeddings, vector store, and reranker. An MS-MARCO cross-encoder reranks the top-20 chunks, and server-side checks flag out-of-range citation numbers as hallucinations.",
+      "Shipped with an insights dashboard, Docker and Vercel/Render deploy configs, and a pytest suite covering retrieval dedup and citation validation.",
+    ],
+    github: "https://github.com/Eveliox/Biomedical-RAG-System",
+  },
+  {
+    name: "AlpacaAgents",
+    description:
+      "A paper-only options swing-trading system built safety-first: a scanner, a pure rules engine, an executor, and a dashboard, with no live-trading path at all.",
+    tech: ["Python", "SQLite", "Alpaca API", "Polygon API", "unittest"],
+    highlights: [
+      "Split the system into four layers: a signal scanner, a deterministic rules engine with no I/O, an executor that reconciles broker state before acting, and a static dashboard with notifications.",
+      "Nothing trades unless a kill-switch file is armed, the playbook is explicitly approved, and account state is fully reconciled. A transactional order journal, a daily-loss breaker, and a hard per-trade risk cap back that up.",
+      "Covered with an offline test suite that runs the full trade lifecycle against a stateful fake broker, plus a walk-forward backtester with no look-ahead.",
+    ],
+    github: "https://github.com/Eveliox/AlpacaAgents",
+  },
   {
     name: "PantherAI",
     description:
@@ -149,26 +232,36 @@ export const projects: Project[] = [
 export const skills = [
   {
     group: "Languages",
-    items: ["Python", "Java", "JavaScript", "C", "C++", "SQL"],
+    items: ["Python", "TypeScript", "JavaScript", "SQL", "Java", "C", "C++"],
   },
   {
-    group: "Backend & APIs",
+    group: "Backend & Data",
     items: [
-      "Flask",
       "FastAPI",
+      "Flask",
       "Node.js",
-      "REST API design",
-      "Authentication",
-      "Modular backend architecture",
+      "PostgreSQL",
+      "PostGIS",
+      "Supabase",
+      "Databricks",
+      "REST APIs",
     ],
   },
   {
     group: "Cloud & DevOps",
-    items: ["Azure", "Docker", "Linux", "Git", "GitHub Actions (CI/CD)"],
+    items: [
+      "AWS EC2",
+      "DigitalOcean",
+      "Docker",
+      "Linux",
+      "Nginx",
+      "Git",
+      "GitHub Actions (CI/CD)",
+    ],
   },
   {
     group: "Frontend",
-    items: ["React", "Next.js", "Tailwind CSS"],
+    items: ["React", "Next.js", "Vite", "Tailwind CSS"],
   },
 ];
 

@@ -97,7 +97,12 @@ body { background-image: radial-gradient(rgba(100, 88, 65, .08) .65px, transpare
 .hero-footnote a { display: flex; align-items: center; gap: 16px; }
 .landscape { position: relative; color: #3f4a43; border: 1px solid var(--hairline); padding: 12px; background: var(--paper); transform: rotate(2deg); transition: transform .7s; }
 .landscape:hover { transform: rotate(0); }
-.landscape svg { width: 100%; height: auto; }
+.landscape svg { display: block; width: 100%; height: auto; }
+.landscape-solar { transform-origin: 310px 205px; }
+.landscape-glow, .landscape-orbit { transform-origin: 310px 205px; }
+.landscape-ridge-back { opacity: .65; }
+.landscape-caption > span:first-child { display: flex; align-items: center; gap: 7px; }
+.landscape-live { width: 4px; height: 4px; border-radius: 50%; background: var(--sumi); flex-shrink: 0; }
 .landscape-sun { fill: var(--sumi); }
 .mountain-snow { fill: var(--paper); }
 .landscape-ridge { fill: #333f37; }
@@ -106,8 +111,28 @@ body { background-image: radial-gradient(rgba(100, 88, 65, .08) .65px, transpare
 .landscape-script { position: absolute; top: 12%; left: 12%; writing-mode: vertical-rl; font-family: var(--font-shippori), serif; letter-spacing: .35em; font-size: 24px; color: var(--ink); }
 .landscape-stamp { position: absolute; right: 12%; bottom: 19%; writing-mode: vertical-rl; color: #f4f1e9; border: 1px solid #f4f1e980; background: var(--sumi); padding: 8px 4px; font-size: 15px; }
 .landscape-caption { display: flex; justify-content: space-between; gap: 10px; padding: 15px 2px 3px; font: 8px var(--font-jetbrains), monospace; letter-spacing: .12em; color: var(--muted); }
-@media (prefers-reduced-motion: no-preference) { .landscape-cloud { animation: cloud-drift 12s ease-in-out infinite alternate; } }
-@keyframes cloud-drift { to { transform: translateX(12px); } }
+/* Only transform and opacity animate; the print stays complete without motion or JS. */
+@media (prefers-reduced-motion: no-preference) {
+  .landscape-solar { animation: landscape-sunrise 16s ease-in-out infinite alternate; }
+  .landscape-glow { animation: landscape-breathe 8s ease-in-out infinite alternate; }
+  .landscape-orbit { animation: landscape-orbit 100s linear infinite; }
+  .landscape-cloud-high { animation: landscape-cloud-drift 18s ease-in-out infinite alternate; }
+  .landscape-distant { animation: landscape-depth 22s ease-in-out infinite alternate; }
+  .landscape-mist-back { animation: landscape-mist-drift 17s ease-in-out infinite alternate; }
+  .landscape-mist-front { animation: landscape-mist-drift 13s ease-in-out -8s infinite alternate-reverse; }
+  .landscape-ridge-back { animation: landscape-depth 16s ease-in-out -5s infinite alternate-reverse; }
+  .landscape-water { animation: landscape-water-flow 10s ease-in-out infinite alternate; }
+  .landscape-birds { animation: landscape-bird-flight 20s ease-in-out infinite alternate; }
+  .landscape-live { animation: landscape-breathe 4s ease-in-out infinite alternate; }
+}
+@keyframes landscape-sunrise { from { transform: translateY(6px); } to { transform: translateY(-9px); } }
+@keyframes landscape-breathe { from { opacity: .45; transform: scale(.95); } to { opacity: 1; transform: scale(1.06); } }
+@keyframes landscape-orbit { to { transform: rotate(360deg); } }
+@keyframes landscape-cloud-drift { from { transform: translateX(-24px); opacity: .5; } to { transform: translateX(25px); opacity: .9; } }
+@keyframes landscape-depth { from { transform: translate(-5px, 3px); } to { transform: translate(5px, -3px); } }
+@keyframes landscape-mist-drift { from { transform: translateX(-45px); } to { transform: translateX(45px); } }
+@keyframes landscape-water-flow { from { transform: translateX(-16px); opacity: .5; } to { transform: translateX(16px); opacity: 1; } }
+@keyframes landscape-bird-flight { from { transform: translate(-12px, 7px); opacity: .5; } to { transform: translate(24px, -9px); opacity: .85; } }
 .content-section { padding: 100px 0; border-bottom: 1px solid var(--hairline); }
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 30px; margin-bottom: 48px; border-bottom: 1px solid var(--hairline); }
 .section-index { color: var(--sumi); font: 10px var(--font-jetbrains), monospace; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; }

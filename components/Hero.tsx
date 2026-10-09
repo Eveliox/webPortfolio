@@ -51,12 +51,8 @@ export function Hero() {
       aria-label="Introduction"
       className="hero-section"
     >
-      <span
-        aria-hidden="true"
-        className="hidden md:flex absolute left-6 lg:left-10 top-1/2 -translate-y-1/2 vertical-rl font-serif text-[0.7rem] tracking-[0.5em] text-muted/70 dark:text-muted-dark/70 select-none"
-      >
-        {personal.nameKatakana}
-      </span>
+      <div className="hero-margin" aria-hidden="true"><span lang="ja">{personal.nameKatakana} ・ 静かな情熱</span><span>PORTFOLIO — 2026</span></div>
+      <div className="hero-editorial"><span>ENGINEERING, WITH INTENTION.</span><span>MIAMI, FL / AVAILABLE SUMMER 2027</span></div>
 
       <div className="hero-layout">
       <div className="hero-copy">
@@ -67,13 +63,14 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.05}>
+          <p className="hero-preface">A little logic.<br />A lot of intention.</p>
           <h1 className="hero-name font-serif">
             Evelio<span className="block">Gonzalez<span className="text-sumi dark:text-sumi-dark">.</span></span>
           </h1>
         </Reveal>
 
         <Reveal delay={0.12}>
-          <p className="mt-7 max-w-lg text-base md:text-lg leading-[1.8] text-muted dark:text-muted-dark">
+          <p className="hero-description mt-7 text-base leading-[1.9] text-muted dark:text-muted-dark">
             {hero.tagline}
           </p>
         </Reveal>
@@ -88,7 +85,7 @@ export function Hero() {
           <a href="#projects" className="primary-link mt-8">Explore my work <ArrowDown size={16} aria-hidden="true" /></a>
         </Reveal>
         <Reveal delay={0.24}>
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-3 font-mono text-sm">
+          <ul className="hero-socials mt-8 flex flex-wrap gap-x-5 gap-y-3 font-mono text-xs">
             {ctas.map((cta) => {
               const Icon = cta.icon;
               if (cta.kind === "email") {
@@ -127,9 +124,9 @@ export function Hero() {
           </ul>
         </Reveal>
       </div>
-      <Reveal delay={0.15} className="hero-art"><Landscape /></Reveal>
+      <Reveal delay={0.15} className="hero-art"><span className="hero-calligraphy" lang="ja" aria-hidden="true">創造</span><Landscape /></Reveal>
       </div>
-      <div className="hero-footnote"><span>THOUGHTFUL SOFTWARE. PURPOSEFUL DETAILS.</span><a href="#about">SCROLL TO DISCOVER <ArrowDown size={13} aria-hidden="true" /></a></div>
+      <div className="hero-footnote"><span><span lang="ja">余白</span> SPACE TO THINK. ROOM TO BUILD.</span><a href="#projects">SELECTED WORK <ArrowDown size={15} aria-hidden="true" /></a></div>
     </section>
   );
 }

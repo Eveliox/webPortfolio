@@ -18,10 +18,11 @@ export function Reveal({
 }: RevealProps) {
   const reduce = useReducedMotion();
   const MotionTag = motion[as] as typeof motion.div;
+  const revealClass = `reveal ${className ?? ""}`;
 
   if (reduce) {
     const Tag = as;
-    return <Tag className={className}>{children}</Tag>;
+    return <Tag className={revealClass}>{children}</Tag>;
   }
 
   return (
@@ -30,7 +31,7 @@ export function Reveal({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
-      className={className}
+      className={revealClass}
     >
       {children}
     </MotionTag>

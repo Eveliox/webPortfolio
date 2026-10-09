@@ -10,30 +10,30 @@ const config: Config = {
     extend: {
       colors: {
         paper: {
-          DEFAULT: "#F4F1E9",
-          dark: "#171A19",
+          DEFAULT: "#FAF9F6",
+          dark: "#191919",
         },
         ink: {
-          DEFAULT: "#252B28",
+          DEFAULT: "#242323",
           soft: "#333333",
-          dark: "#EDEDE8",
+          dark: "#EEECE7",
           "soft-dark": "#C4C4BF",
         },
         muted: {
-          DEFAULT: "#686C64",
-          dark: "#A2A69C",
+          DEFAULT: "#74716C",
+          dark: "#AAA69F",
         },
         sumi: {
-          DEFAULT: "#B44232",
-          dark: "#E8826E",
+          DEFAULT: "#A64236",
+          dark: "#DA8273",
         },
         gold: {
           DEFAULT: "#B8860B",
           dark: "#D4A94A",
         },
         hairline: {
-          DEFAULT: "#DCDACF",
-          dark: "#343A35",
+          DEFAULT: "#DFDDD7",
+          dark: "#373635",
         },
       },
       fontFamily: {

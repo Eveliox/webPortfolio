@@ -1,79 +1,70 @@
 .artwork {
-  --sky-top: #dedbd0;
-  --sky-bottom: #f1cfaa;
-  --celestial: #d56a42;
-  --sun-top: #d45437;
-  --sun-bottom: #ef9c65;
-  --peak: #82918a;
-  --peak-base: #b4b7a0;
-  --peak-shadow: #344e4a;
-  --snow: #f6ead4;
-  --fog: #ede1c4;
-  --far-ridge: #869c91;
-  --middle-ridge: #506e65;
-  --near-ridge: #29483f;
-  --front-ink: #19382f;
-  --ridge-line: #bac3a3;
-  --river: #a8b9a1;
-  --gate: #db8a65;
-  --bird: #47534a;
+  --sky-top: #eeede8;
+  --sky-bottom: #e3e0d8;
+  --celestial: #a64236;
+  --sun-top: #a4483a;
+  --sun-bottom: #c78470;
+  --peak: #777976;
+  --peak-base: #b7b7ae;
+  --peak-shadow: #323734;
+  --snow: #f5f3ed;
+  --fog: #eeece5;
+  --far-ridge: #a1a39d;
+  --middle-ridge: #686e67;
+  --near-ridge: #383f39;
+  --front-ink: #252b27;
+  --ridge-line: #b8bab0;
+  --river: #b9bcb1;
+  --gate: #b17c65;
+  --bird: #40443e;
   position: relative;
   width: 100%;
   isolation: isolate;
 }
 
 .artwork[data-night="true"] {
-  --sky-top: #182e3d;
-  --sky-bottom: #708784;
-  --celestial: #eee2b9;
-  --sun-top: #f5edce;
-  --sun-bottom: #b9d0c3;
-  --peak: #5e8081;
-  --peak-base: #7b9d92;
-  --peak-shadow: #183d4b;
-  --snow: #d4e1d2;
-  --fog: #a6c5bc;
-  --far-ridge: #5a7b83;
-  --middle-ridge: #31575a;
-  --near-ridge: #193b41;
-  --front-ink: #102a32;
-  --ridge-line: #7ba6a1;
-  --river: #487a81;
-  --gate: #d6b685;
-  --bird: #d7dfcc;
+  --sky-top: #272c2d;
+  --sky-bottom: #7f8986;
+  --celestial: #e4e2d4;
+  --sun-top: #f1efdf;
+  --sun-bottom: #bfc7bf;
+  --peak: #6b7b79;
+  --peak-base: #8a9990;
+  --peak-shadow: #303d3e;
+  --snow: #d9ded1;
+  --fog: #b9c5bb;
+  --far-ridge: #6a7c7b;
+  --middle-ridge: #485b57;
+  --near-ridge: #293d38;
+  --front-ink: #1c2c28;
+  --ridge-line: #92a299;
+  --river: #768d85;
+  --gate: #c7b393;
+  --bird: #dedfcf;
 }
 
-.artwork::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 8% -12% 14%;
-  background: radial-gradient(ellipse, color-mix(in srgb, var(--celestial) 14%, transparent), transparent 68%);
-  pointer-events: none;
-}
+.artwork { padding-right: 8px; }
 
 .masthead {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2px 14px;
+  padding: 0 100px 16px 0;
   color: var(--muted);
-  font: 9px var(--font-jetbrains), monospace;
+  font: 7px var(--font-jetbrains), monospace;
   letter-spacing: .15em;
 }
 .masthead > span:first-child { display: flex; align-items: center; gap: 8px; }
 .liveDot { width: 5px; height: 5px; background: var(--sumi); border-radius: 50%; }
 .frame {
   position: relative;
-  padding: 8px;
-  border: 1px solid var(--hairline);
+  padding: 0;
   background: var(--paper);
-  box-shadow: 0 24px 50px -28px #24392e40, 0 4px 12px #24392e08;
 }
 .frame::after {
   content: '';
   position: absolute;
-  inset: 5px -6px -6px 5px;
+  inset: 16px -12px -12px 16px;
   z-index: -1;
   border: 1px solid var(--hairline);
 }
@@ -90,22 +81,22 @@
 .inscription { position: absolute; top: 9%; left: 8%; display: flex; align-items: flex-start; gap: 12px; color: #34473e; transition: color 1s; pointer-events: none; }
 .japanese { writing-mode: vertical-rl; font: 27px var(--font-shippori), serif; letter-spacing: .3em; }
 .translation { writing-mode: vertical-rl; padding-top: 3px; font: 7px var(--font-jetbrains), monospace; letter-spacing: .23em; opacity: .7; }
-.coordinates { position: absolute; top: 6%; right: 7%; color: #44564b; font: 7px var(--font-jetbrains), monospace; letter-spacing: .13em; transition: color 1s; pointer-events: none; }
+.coordinates { position: absolute; top: 6%; right: 24%; color: #44564b; font: 7px var(--font-jetbrains), monospace; letter-spacing: .13em; transition: color 1s; pointer-events: none; }
 .artwork[data-night="true"] .inscription, .artwork[data-night="true"] .coordinates { color: #e1e5d5; }
 .sceneFooter { position: absolute; bottom: 5%; left: 7%; right: 7%; display: flex; align-items: flex-end; justify-content: space-between; pointer-events: none; }
 .sceneLabel { font: 8px var(--font-jetbrains), monospace; color: #d1d6bd; letter-spacing: .15em; }
 .seal { writing-mode: vertical-rl; border: 1px solid #f4e1c577; background: #ac4a36; box-shadow: inset 0 0 0 3px #ac4a36, inset 0 0 0 4px #f4e1c544; color: #f4e1c5; font: 17px var(--font-shippori), serif; padding: 8px 6px; transform: rotate(-5deg); }
-.caption { padding: 23px 2px 0; }
+.caption { padding: 30px 2px 0; }
 .titleRow { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .eyebrow { color: var(--muted); font: 8px var(--font-jetbrains), monospace; letter-spacing: .17em; margin-bottom: 8px; }
-.titleRow h2 { font: clamp(23px, 2.2vw, 30px)/1.2 var(--font-shippori), serif; letter-spacing: -.035em; }
+.titleRow h2 { font: clamp(21px, 2vw, 26px)/1.2 var(--font-shippori), serif; letter-spacing: -.035em; }
 .titleRow h2 > span { color: var(--sumi); }
 .edition { color: var(--muted); text-align: right; font: 15px/1.5 var(--font-shippori), serif; }
 .edition > span { font: 7px var(--font-jetbrains), monospace; letter-spacing: .12em; }
 .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--hairline); }
-.modes { display: flex; gap: 3px; border: 1px solid var(--hairline); padding: 3px; border-radius: 30px; }
-.modes button, .pause { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 36px; padding: 0 14px; color: var(--muted); font: 10px var(--font-jetbrains), monospace; border-radius: 24px; transition: color .25s, background .25s; }
-.modes button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.modes { display: flex; gap: 14px; }
+.modes button, .pause { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 36px; padding: 0 3px; color: var(--muted); font: 9px var(--font-jetbrains), monospace; border-bottom: 1px solid transparent; transition: color .25s, background .25s; }
+.modes button[aria-pressed="true"] { border-color: var(--sumi); color: var(--ink); }
 .modes button:hover:not([aria-pressed="true"]), .pause:hover { background: var(--hairline); color: var(--ink); }
 .pause { padding: 0 10px; }
 .dawnIcon { width: 10px; height: 10px; border: 1px solid currentColor; border-radius: 50%; box-shadow: 0 0 0 2px color-mix(in srgb, currentColor 15%, transparent); }

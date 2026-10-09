@@ -5,6 +5,8 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { nav, personal } from "@/lib/data";
 
+const navCharacters = ["私", "歩", "作", "縁"];
+
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -37,12 +39,12 @@ export function Nav() {
     <header className={`site-header ${scrolled || open ? "is-scrolled" : ""}`}>
       <nav aria-label="Primary" className="nav-inner">
         <a href="#top" className="brand" aria-label={`${personal.name}, home`} onClick={() => setOpen(false)}>
-          <span className="brand-seal" aria-hidden="true">eg.</span>
-          <span className="font-serif text-sm">Evelio Gonzalez<span className="brand-caption">ENGINEER & BUILDER</span></span>
+          <span className="brand-seal" aria-hidden="true">eg</span>
+          <span className="brand-name">Evelio Gonzalez<span className="brand-caption">SOFTWARE / SYSTEMS / CRAFT</span></span>
         </a>
         <div className="flex items-center gap-3 md:gap-6">
-          <ul className="hidden md:flex items-center gap-7 font-mono text-[11px] uppercase tracking-wider">
-            {nav.map((item) => <li key={item.href}><a className="nav-link" aria-current={active === item.href ? "location" : undefined} href={item.href}>{item.label}</a></li>)}
+          <ul className="desktop-nav hidden md:flex">
+            {nav.map((item, i) => <li key={item.href}><a className="nav-link" aria-current={active === item.href ? "location" : undefined} href={item.href}><span className="nav-character" lang="ja" aria-hidden="true">{navCharacters[i]}</span><span>{item.label}</span></a></li>)}
           </ul>
           <a href={personal.resume} className="hidden lg:inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider">Résumé <ArrowUpRight size={14} aria-hidden="true" /></a>
           <ThemeToggle />

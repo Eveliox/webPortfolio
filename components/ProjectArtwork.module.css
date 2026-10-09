@@ -1,0 +1,64 @@
+.artwork {
+  --accent: var(--sumi);
+  --surface: var(--paper);
+  --tint: color-mix(in srgb, var(--ink) 4%, var(--paper));
+  --line: color-mix(in srgb, var(--ink) 17%, var(--paper));
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--tint);
+  color: var(--ink);
+  transition: border-color .3s, box-shadow .3s;
+}
+.artwork[data-visual="relay"] { --accent: #687a61; }
+.artwork[data-visual="campus"] { --accent: #927239; }
+.artwork[data-visual="pipeline"] { --accent: #5d7983; }
+.artwork[data-visual="studio"] { --accent: #517996; }
+:global(.dark) .artwork { --accent: #d58f80; }
+:global(.dark) .artwork[data-visual="relay"] { --accent: #a4b795; }
+:global(.dark) .artwork[data-visual="campus"] { --accent: #d1b47e; }
+:global(.dark) .artwork[data-visual="pipeline"], :global(.dark) .artwork[data-visual="studio"] { --accent: #99bccb; }
+.canvas { display: block; width: 100%; height: auto; transition: transform .65s cubic-bezier(.2,.7,.2,1); }
+.canvas text { fill: currentColor; font-family: var(--font-jetbrains), monospace; }
+.small { font-size: 10px; }
+.muted { font-size: 9px; fill: var(--muted) !important; letter-spacing: .4px; }
+.accent { font-size: 9px; fill: var(--accent) !important; letter-spacing: .3px; }
+.title { font: 18px var(--font-shippori), serif !important; letter-spacing: -.4px; }
+.metric { font: 44px var(--font-shippori), serif !important; }
+.window, .node, .phone { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
+.panel { fill: var(--tint); stroke: var(--line); }
+.rule { stroke: var(--line); }
+.chrome { fill: var(--muted); opacity: .5; }
+.lines { stroke: var(--ink); stroke-opacity: .2; stroke-width: 2; }
+.outline { stroke: var(--ink); stroke-opacity: .6; }
+.connector { stroke: var(--accent); stroke-width: 1.5; }
+.accentFill { fill: var(--accent); }
+.map { stroke: var(--line); stroke-width: 1.2; }
+.river { stroke: var(--accent); stroke-opacity: .15; stroke-width: 12; }
+.network { stroke: var(--accent); stroke-width: 2; }
+.zone { fill: var(--accent); fill-opacity: .08; stroke: var(--accent); stroke-opacity: .4; stroke-dasharray: 3 4; }
+.citation, .userBubble { fill: color-mix(in srgb, var(--accent) 9%, var(--surface)); stroke: color-mix(in srgb, var(--accent) 25%, var(--surface)); }
+.rising { fill: var(--ink); stroke: var(--ink); opacity: .7; }
+.falling { fill: var(--surface); stroke: var(--accent); }
+.trend { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.flow { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 5; }
+.rejected { stroke: var(--accent); stroke-dasharray: 3 4; }
+.houseGround { fill: var(--ink); fill-opacity: .05; }
+.houseSide { fill: color-mix(in srgb, var(--ink) 18%, var(--surface)); stroke: var(--line); }
+.houseFront { fill: var(--surface); stroke: var(--line); }
+.houseRoof { fill: color-mix(in srgb, var(--ink) 80%, var(--surface)); stroke: var(--line); }
+.houseDoor { fill: var(--accent); fill-opacity: .8; }
+.studioWord { font: 82px var(--font-shippori), serif !important; letter-spacing: -7px; }
+.studioSculpture { fill: color-mix(in srgb, var(--accent) 16%, var(--surface)); stroke: var(--accent); stroke-width: .8; }
+.phone { stroke-width: 2; }
+.caption { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px; border-top: 1px solid var(--hairline); background: var(--surface); }
+.caption > span:first-child { font: 12px var(--font-shippori), serif; }
+.caption > span:last-child { display: flex; align-items: center; gap: 9px; white-space: nowrap; color: var(--muted); font: 7px var(--font-jetbrains), monospace; letter-spacing: .04em; }
+.caption > span:last-child > span { color: var(--accent); font-size: 15px; transition: transform .3s; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :global(.project-art-link:hover) .artwork { border-color: var(--accent); box-shadow: 0 12px 24px -20px var(--ink); }
+  :global(.project-art-link:hover) .canvas { transform: scale(1.018); }
+  :global(.project-art-link:hover) .caption > span:last-child > span { transform: translate(2px, -2px); }
+}
+:global(.project-art-link:focus-visible) .artwork { border-color: var(--accent); }
+@media (max-width: 380px) { .caption { padding: 12px 10px; gap: 6px; } .caption > span:first-child { font-size: 11px; } .caption > span:last-child { font-size: 6px; gap: 4px; } }
+@media (prefers-reduced-motion: reduce) { .artwork, .canvas, .caption > span:last-child > span { transition: none; } }

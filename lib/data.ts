@@ -107,8 +107,11 @@ export const experience: Experience[] = [
   },
 ];
 
+export type ProjectVisual = "relay" | "research" | "trading" | "campus" | "pipeline" | "property" | "studio";
+
 export type Project = {
   name: string;
+  visual: ProjectVisual;
   description: string;
   tech: string[];
   highlights: string[];
@@ -123,6 +126,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Relay",
+    visual: "relay",
     description:
       "A transmission planning coordination tool built at ShellHacks 2026 for Sperry Tech's \"Gridlock\" challenge. It maps planned grid projects across utilities and flags the ones that should be coordinated.",
     tech: [
@@ -145,6 +149,7 @@ export const projects: Project[] = [
   },
   {
     name: "Biomedical Literature RAG System",
+    visual: "research",
     description:
       "A full-stack research assistant that searches PubMed and answers questions only from the retrieved papers, with numbered citations back to each source.",
     tech: [
@@ -165,6 +170,7 @@ export const projects: Project[] = [
   },
   {
     name: "AlpacaAgents",
+    visual: "trading",
     description:
       "A paper-only options swing-trading system built safety-first: a scanner, a pure rules engine, an executor, and a dashboard, with no live-trading path at all.",
     tech: ["Python", "SQLite", "Alpaca API", "Polygon API", "unittest"],
@@ -177,6 +183,7 @@ export const projects: Project[] = [
   },
   {
     name: "PantherAI",
+    visual: "campus",
     description:
       "A campus-life copilot for FIU students. Answers coursework, deadline, and campus-service questions in natural language.",
     tech: [
@@ -196,6 +203,7 @@ export const projects: Project[] = [
   },
   {
     name: "Real-Time Market Data ETL Pipeline",
+    visual: "pipeline",
     description:
       "An always-on ETL pipeline that ingests live market data from public APIs and lands it in PostgreSQL for downstream analytics.",
     tech: ["Python", "PostgreSQL", "Apache Airflow", "Docker", "SQL"],
@@ -207,6 +215,7 @@ export const projects: Project[] = [
   },
   {
     name: "Real Estate Market Analyzer",
+    visual: "property",
     description:
       "A Python tool that pulls listings from multiple housing data sources, normalizes them into a comparable schema, and surfaces candidates worth deeper review.",
     tech: ["Python", "Pandas", "SQL"],
@@ -218,6 +227,7 @@ export const projects: Project[] = [
   },
   {
     name: "Azul Web Development Studio",
+    visual: "studio",
     description:
       "A web studio I founded and run solo. Covers brand identity, marketing site, and shipping client projects on Next.js and Vercel.",
     tech: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],

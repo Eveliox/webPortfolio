@@ -15,7 +15,7 @@ export function Projects() {
               <Reveal delay={(i % 2) * 0.06} className="h-full">
                 <article className="project-inner">
                   <div className="project-meta"><span>作品 / {String(i + 1).padStart(2, "0")}</span><span>{project.liveUrl ? "LIVE PROJECT" : "OPEN SOURCE"}</span></div>
-                  <a className="project-art-link" href={project.liveUrl ?? project.github} target="_blank" rel="noopener noreferrer" aria-label={`Explore ${project.name} (opens in new tab)`}><ProjectArtwork index={i} /></a>
+                  <a className="project-art-link" href={project.liveUrl ?? project.github} target="_blank" rel="noopener noreferrer" aria-label={`Explore ${project.name} (opens in new tab)`}><ProjectArtwork visual={project.visual} /></a>
                   <a href={project.liveUrl ?? project.github} target="_blank" rel="noopener noreferrer" className="project-title"><h3 className="font-serif text-2xl md:text-3xl">{project.name}</h3><ArrowUpRight size={22} aria-hidden="true" /><span className="sr-only">{project.liveUrl ? "Visit live site" : "View on GitHub"} (opens in new tab)</span></a>
                   <p className="mt-4 text-sm leading-[1.85] text-muted dark:text-muted-dark">{project.description}</p>
                   <ul className="project-tech">{project.tech.map((tech) => <li key={tech}>{tech}</li>)}</ul>

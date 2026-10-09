@@ -92,10 +92,6 @@ html.no-js [style*="opacity: 0"] { opacity: 1 !important; transform: none !impor
 .project-meta { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font: 8px var(--font-jetbrains), monospace; letter-spacing: .12em; margin-bottom: 15px; }
 .project-meta > span:first-child { color: var(--sumi); }
 .project-art-link { display: block; margin-bottom: 24px; }
-.project-artwork { position: relative; overflow: hidden; color: var(--ink); background: var(--paper); border: 1px solid var(--hairline); }
-.project-artwork svg { width: 100%; height: auto; display: block; transition: transform .7s; }
-.project-art-link:hover svg { transform: scale(1.045); }
-.project-artwork > span { position: absolute; bottom: 8%; left: 7%; color: var(--muted); font: 6px var(--font-jetbrains), monospace; letter-spacing: .15em; }
 .project-title { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; line-height: 1.3; }
 .project-title h3 { font-size: 25px; }
 .project-title svg { flex-shrink: 0; margin-top: 5px; transition: transform .25s; }

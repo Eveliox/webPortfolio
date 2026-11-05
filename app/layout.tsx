@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { inter, shippori, jetbrains } from "@/lib/fonts";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
-import "./portfolio.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eveliogonzalez.com"),

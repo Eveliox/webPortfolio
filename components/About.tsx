@@ -7,7 +7,7 @@ export function About() {
   return (
     <section id="about" aria-labelledby="about-heading" className="content-section">
       <div className="mx-auto max-w-5xl px-6 md:px-10">
-        <div id="about-heading"><SectionHeading index="01 — About" title="The person behind the work." /></div>
+        <div id="about-heading"><SectionHeading index="02 — About" title="The person behind the work." /></div>
         <div className="about-layout">
           <Reveal>
             <figure className="about-portrait">

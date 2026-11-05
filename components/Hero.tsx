@@ -58,15 +58,12 @@ export function Hero() {
       <div className="hero-copy">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted dark:text-muted-dark mb-8">
-            SOFTWARE ENGINEER / {personal.location}
+            EVELIO GONZALEZ / {personal.location}
           </p>
         </Reveal>
 
         <Reveal delay={0.05}>
-          <p className="hero-preface">A little logic.<br />A lot of intention.</p>
-          <h1 className="hero-name font-serif">
-            Evelio<span className="block">Gonzalez<span className="text-sumi dark:text-sumi-dark">.</span></span>
-          </h1>
+          <h1 className="hero-statement font-serif">I build software that turns messy data into <em>useful decisions.</em></h1>
         </Reveal>
 
         <Reveal delay={0.12}>
@@ -75,6 +72,8 @@ export function Hero() {
           </p>
         </Reveal>
 
+        <div className="hero-evidence" aria-label="Impact at Caley Insurance"><div><strong>6</strong><span>internal applications</span></div><div><strong>50+</strong><span>employees served</span></div><div><strong>20+ hrs</strong><span>saved monthly</span></div></div>
+        <p className="evidence-context">From my engineering internship at Caley Insurance.</p>
         <Reveal delay={0.18}>
           <p className="availability mt-6 max-w-sm text-xs leading-[1.8]">
             {hero.status}
@@ -82,7 +81,7 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.21}>
-          <a href="#projects" className="primary-link mt-8">Explore my work <ArrowDown size={16} aria-hidden="true" /></a>
+          <a href="#projects" className="primary-link mt-8">Explore selected work <ArrowDown size={16} aria-hidden="true" /></a>
         </Reveal>
         <Reveal delay={0.24}>
           <ul className="hero-socials mt-8 flex flex-wrap gap-x-5 gap-y-3 font-mono text-xs">

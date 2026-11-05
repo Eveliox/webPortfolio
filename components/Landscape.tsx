@@ -23,6 +23,12 @@ export function Landscape() {
     stage.current?.style.setProperty("--pointer-y", `${((event.clientY - bounds.top) / bounds.height - 0.5) * 12}px`);
   }
 
+  const [layer, setLayer] = useState(0);
+  const layers = [
+    { name: "Terrain", slug: "relay", project: "Relay", note: "Read the landscape. Find the connections." },
+    { name: "Evidence", slug: "biomedical-rag", project: "Biomedical RAG", note: "Follow each claim to its source." },
+    { name: "Guardrails", slug: "alpaca-agents", project: "AlpacaAgents", note: "Trace the boundary before taking action." },
+  ];
   return (
     <figure className={styles.artwork} data-night={night} data-paused={paused}>
       <div className={styles.masthead}>
@@ -121,6 +127,11 @@ export function Landscape() {
               <circle cx="100" cy="438" r="1.8" /><circle cx="173" cy="489" r="1.3" /><circle cx="358" cy="425" r="1.5" /><circle cx="431" cy="395" r="1.2" /><circle cx="66" cy="375" r="1" />
             </g>
             <path d="M0 0H520V600H0Z" fill={paint("grain")} opacity=".09" />
+        <g className="landscape-overlay" key={layer} stroke="var(--paper)" fill="var(--paper)">
+          {layer === 0 && <><path d="M105 420L256 330L400 460M105 420L340 510L400 460" fill="none" strokeDasharray="5 6" />{[[105,420],[256,330],[400,460],[340,510]].map(([x,y]) => <circle key={x} cx={x} cy={y} r="5" />)}</>}
+          {layer === 1 && <>{[0,1,2].map(i => <g key={i}><rect x={80+i*130} y={410-i*25} width="85" height="65" fill="var(--paper)" fillOpacity=".1" /><path d={`M${90+i*130} ${430-i*25}h60m-60 12h40`} /></g>)}<path d="M165 440L210 415M295 415L340 390" fill="none" /></>}
+          {layer === 2 && <><path d="M80 455H440M260 400V510" fill="none" strokeDasharray="4 5" /><rect x="225" y="420" width="70" height="70" fill="var(--sumi)" /><path d="M245 440l30 30m0-30l-30 30" strokeWidth="3" /></>}
+        </g>
           </svg>
           <div className={styles.inscription} aria-hidden="true">
             <span className={styles.japanese} lang="ja">静かな情熱</span>
@@ -148,6 +159,9 @@ export function Landscape() {
             <span>{paused ? "Resume" : "Pause"}</span>
           </button>
         </div>
+        <div className="landscape-layers" aria-label="Explore a system layer">{layers.map((item, i) => <button type="button" key={item.slug} aria-pressed={layer === i} onClick={() => setLayer(i)}>{item.name}</button>)}</div>
+        <div className="landscape-detail" aria-live="polite"><p>{layers[layer].note}</p><a href={`#project-${layers[layer].slug}`}>Explore {layers[layer].project} ↗</a></div>
+        <p className="landscape-note">A woodblock-inspired landscape, redrawn as layers of systems to explore.</p>
       </figcaption>
     </figure>
   );

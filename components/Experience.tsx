@@ -11,7 +11,7 @@ export function Experience() {
     >
       <div className="mx-auto max-w-5xl px-6 md:px-10">
         <div id="work-heading">
-          <SectionHeading index="02 — Work" title="Where I've spent my hours." />
+          <SectionHeading index="03 — Work" title="Where I've spent my hours." />
         </div>
 
         <ol className="space-y-16 md:space-y-20">

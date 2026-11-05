@@ -1,31 +1,21 @@
-import { ArrowUpRight, Plus } from "lucide-react";
-import { Reveal } from "./Reveal";
-import { SectionHeading } from "./SectionHeading";
-import { projects } from "@/lib/data";
+import Link from "next/link";
 import { ProjectArtwork } from "./ProjectArtwork";
+import { ArrowUpRight } from "lucide-react";
+import { SectionHeading } from "./SectionHeading";
+import { Experiment } from "./Experiments";
+import { projects } from "@/lib/data";
+import { caseStudies } from "@/lib/case-studies";
 
 export function Projects() {
-  return (
-    <section id="projects" aria-labelledby="projects-heading" className="content-section projects-section">
-      <div className="mx-auto max-w-5xl px-6 md:px-10">
-        <div id="projects-heading"><SectionHeading index="03 — Projects" title="Selected works." /></div>
-        <ul className="project-grid">
-          {projects.map((project, i) => (
-            <li key={project.name} className="project-card">
-              <Reveal delay={(i % 2) * 0.06} className="h-full">
-                <article className="project-inner">
-                  <div className="project-meta"><span>作品 / {String(i + 1).padStart(2, "0")}</span><span>{project.liveUrl ? "LIVE PROJECT" : "OPEN SOURCE"}</span></div>
-                  <a className="project-art-link" href={project.liveUrl ?? project.github} target="_blank" rel="noopener noreferrer" aria-label={`Explore ${project.name} (opens in new tab)`}><ProjectArtwork visual={project.visual} /></a>
-                  <a href={project.liveUrl ?? project.github} target="_blank" rel="noopener noreferrer" className="project-title"><h3 className="font-serif text-2xl md:text-3xl">{project.name}</h3><ArrowUpRight size={22} aria-hidden="true" /><span className="sr-only">{project.liveUrl ? "Visit live site" : "View on GitHub"} (opens in new tab)</span></a>
-                  <p className="mt-4 text-sm leading-[1.85] text-muted dark:text-muted-dark">{project.description}</p>
-                  <ul className="project-tech">{project.tech.map((tech) => <li key={tech}>{tech}</li>)}</ul>
-                  <details className="project-details"><summary>Behind the build <Plus size={15} aria-hidden="true" /></summary><ul>{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></details>
-                </article>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
+  return <section id="projects" aria-labelledby="projects-heading" className="content-section projects-section">
+    <div className="mx-auto max-w-5xl px-6 md:px-10">
+      <div id="projects-heading"><SectionHeading index="01 — Field notes" title="Three systems. Try the decisions." /></div>
+      <p className="section-intro">A field journal of data, evidence, and reliable execution. Explore a small experiment, then open the engineering notes.</p>
+      <div className="featured-studies">{caseStudies.map(study => <article id={`project-${study.slug}`} key={study.slug} className="featured-study">
+        <div className="study-intro"><Link className="study-artwork" href={`/projects/${study.slug}`} aria-label={`Read the ${study.project.name} case study`}><ProjectArtwork visual={study.project.visual} /></Link><p className="exhibit-label">{study.number} / {study.discipline}</p><h3 className="font-serif text-3xl md:text-4xl"><Link href={`/projects/${study.slug}`}>{study.project.name}</Link></h3><p className="study-deck">{study.title}</p><p className="study-outcome">{study.outcome}</p><p className="study-description">{study.project.description}</p><div className="study-links"><Link href={`/projects/${study.slug}`}>Read the case study <ArrowUpRight size={15} aria-hidden="true" /></Link>{study.project.liveUrl && <a href={study.project.liveUrl} target="_blank" rel="noopener noreferrer">Live project ↗<span className="sr-only"> (opens in new tab)</span></a>}{study.project.github && <a href={study.project.github} target="_blank" rel="noopener noreferrer">Source code ↗<span className="sr-only"> (opens in new tab)</span></a>}</div></div>
+        <Experiment slug={study.slug} />
+      </article>)}</div>
+      <details className="project-archive"><summary>More from the workbench <span>{projects.length - 3} projects +</span></summary><ul className="project-grid mt-6">{projects.slice(3).map(project => <li key={project.name} className="project-card"><article className="project-inner"><ProjectArtwork visual={project.visual} /><h3 className="font-serif text-2xl">{project.name}</h3><p className="study-description">{project.description}</p><ul className="project-tech">{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul><div className="study-links">{project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">Live project ↗<span className="sr-only"> (opens in new tab)</span></a>}{project.github && <a href={project.github} target="_blank" rel="noopener noreferrer">Source code ↗<span className="sr-only"> (opens in new tab)</span></a>}</div></article></li>)}</ul></details>
+    </div>
+  </section>;
 }

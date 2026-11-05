@@ -40,9 +40,9 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
+        <Projects />
         <About />
         <Experience />
-        <Projects />
         <Skills />
         <Certifications />
         <Contact />

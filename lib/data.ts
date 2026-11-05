@@ -15,7 +15,7 @@ export const personal = {
 
 export const hero = {
   tagline:
-    "FIU Computer Science graduate and M.S. Information Technology student at Florida State, building thoughtful software.",
+    "Full-stack engineer working across production applications, geospatial pipelines, and grounded AI. FIU CS graduate, now pursuing an M.S. at Florida State.",
   status: "Currently seeking Summer 2027 software engineering internships.",
 };
 
@@ -293,8 +293,8 @@ export const certifications: Certification[] = [
 ];
 
 export const nav = [
+  { label: "Field notes", href: "#projects" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];

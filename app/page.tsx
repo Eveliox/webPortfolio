@@ -1,12 +1,4 @@
-import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
-import { Experience } from "@/components/Experience";
-import { Projects } from "@/components/Projects";
-import { Skills } from "@/components/Skills";
-import { Certifications } from "@/components/Certifications";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
+import { Portfolio } from "@/components/Portfolio";
 import { personal, hero } from "@/lib/data";
 
 const jsonLd = {
@@ -37,17 +29,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Nav />
-      <main id="main">
-        <Hero />
-        <Projects />
-        <About />
-        <Experience />
-        <Skills />
-        <Certifications />
-        <Contact />
-      </main>
-      <Footer />
+      <Portfolio />
     </>
   );
 }

@@ -1,12 +1,11 @@
-import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
-import { Experience } from "@/components/Experience";
-import { Projects } from "@/components/Projects";
-import { Skills } from "@/components/Skills";
-import { Certifications } from "@/components/Certifications";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
+import { Boot } from "@/components/journey/Boot";
+import { Hud } from "@/components/journey/Hud";
+import { Hero } from "@/components/journey/Hero";
+import { Identity } from "@/components/journey/Identity";
+import { Missions } from "@/components/journey/Missions";
+import { Works } from "@/components/journey/Works";
+import { Arsenal } from "@/components/journey/Arsenal";
+import { Connect } from "@/components/journey/Connect";
 import { personal, hero } from "@/lib/data";
 
 const jsonLd = {
@@ -30,6 +29,7 @@ const jsonLd = {
   },
 };
 
+// One night in Neo-Miami: the page opens at sundown and ends at first light.
 export default function Home() {
   return (
     <>
@@ -37,17 +37,16 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Nav />
+      <Boot />
+      <Hud />
       <main id="main">
         <Hero />
-        <Projects />
-        <About />
-        <Experience />
-        <Skills />
-        <Certifications />
-        <Contact />
+        <Identity />
+        <Missions />
+        <Works />
+        <Arsenal />
+        <Connect />
       </main>
-      <Footer />
     </>
   );
 }

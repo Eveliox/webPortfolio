@@ -1,16 +1,19 @@
-import { Inter, Shippori_Mincho, JetBrains_Mono } from "next/font/google";
+import { Chakra_Petch, Dela_Gothic_One, JetBrains_Mono } from "next/font/google";
 
-export const inter = Inter({
+// UI + body: squared, technical, still readable in paragraphs.
+export const chakra = Chakra_Petch({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-chakra",
 });
 
-export const shippori = Shippori_Mincho({
+// Display: heavy Japanese poster face, covers Latin, kana, and kanji.
+export const dela = Dela_Gothic_One({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: "400",
   display: "swap",
-  variable: "--font-shippori",
+  variable: "--font-dela",
 });
 
 export const jetbrains = JetBrains_Mono({

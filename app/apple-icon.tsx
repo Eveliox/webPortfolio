@@ -14,18 +14,18 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#FAFAF7",
+          background: "#050508",
         }}
       >
-        <svg width="140" height="140" viewBox="0 0 120 120">
-          <path
-            d="M 95 38 C 110 58, 100 96, 70 102 C 38 108, 16 86, 18 58 C 20 32, 48 14, 78 22 C 92 26, 100 36, 100 44"
-            fill="none"
-            stroke="#8B2635"
-            strokeWidth="8"
-            strokeLinecap="round"
-          />
-        </svg>
+        <div
+          style={{
+            width: 112,
+            height: 112,
+            borderRadius: 112,
+            background: "#ff2a45",
+            display: "flex",
+          }}
+        />
       </div>
     ),
     { ...size },

@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { inter, shippori, jetbrains } from "@/lib/fonts";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { chakra, dela, jetbrains } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -55,22 +54,21 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FAF9F6" },
-    { media: "(prefers-color-scheme: dark)", color: "#191919" },
-  ],
+  themeColor: "#050508",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };
 
-const themeScript = `
+// Runs before paint: drops the no-JS fallback class, and skips the boot
+// sequence on repeat visits within the same tab session.
+const bootScript = `
 (function() {
   var el = document.documentElement;
   el.classList.remove('no-js');
   try {
-    var stored = localStorage.getItem('theme');
-    var theme = stored === 'dark' || stored === 'light' ? stored : 'light';
-    if (theme === 'dark') el.classList.add('dark');
+    if (sessionStorage.getItem('booted')) el.classList.add('booted');
+    else sessionStorage.setItem('booted', '1');
   } catch (_) {}
 })();
 `;
@@ -83,20 +81,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`no-js ${inter.variable} ${shippori.variable} ${jetbrains.variable}`}
+      className={`no-js ${chakra.variable} ${dela.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       </head>
-      <body className="font-sans bg-paper text-ink dark:bg-paper-dark dark:text-ink-dark antialiased leading-[1.75]">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-paper dark:focus:bg-paper-dark focus:text-ink dark:focus:text-ink-dark focus:px-3 focus:py-2 focus:border focus:border-hairline dark:focus:border-hairline-dark"
-        >
+      <body>
+        <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <ThemeProvider>{children}</ThemeProvider>
+        {children}
+        <div className="fx-scan" aria-hidden="true" />
+        <div className="fx-grain" aria-hidden="true" />
       </body>
     </html>
   );

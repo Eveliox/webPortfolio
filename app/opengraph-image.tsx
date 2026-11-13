@@ -16,34 +16,25 @@ export default async function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "80px 96px",
-          background: "#FAFAF7",
-          color: "#1A1A1A",
-          fontFamily: "serif",
+          padding: "72px 88px",
+          background: "linear-gradient(180deg, #050508 0%, #14060f 60%, #30091a 100%)",
+          color: "#edecf4",
+          fontFamily: "sans-serif",
           position: "relative",
         }}
       >
         <div
           style={{
             position: "absolute",
-            top: 72,
-            right: 96,
-            width: 180,
-            height: 180,
+            right: 90,
+            top: 95,
+            width: 440,
+            height: 440,
+            borderRadius: 440,
+            background: "linear-gradient(180deg, #ff5560 0%, #ff2a45 55%, #c1002b 100%)",
             display: "flex",
           }}
-        >
-          <svg width="180" height="180" viewBox="0 0 120 120">
-            <path
-              d="M 95 38 C 110 58, 100 96, 70 102 C 38 108, 16 86, 18 58 C 20 32, 48 14, 78 22 C 92 26, 100 36, 100 44"
-              fill="none"
-              stroke="#8B2635"
-              strokeWidth="3"
-              strokeLinecap="round"
-              opacity="0.6"
-            />
-          </svg>
-        </div>
+        />
 
         <div
           style={{
@@ -51,41 +42,35 @@ export default async function OpenGraphImage() {
             fontSize: 20,
             letterSpacing: "0.3em",
             textTransform: "uppercase",
-            color: "#6B6B6B",
+            color: "#2ee6ff",
             fontFamily: "monospace",
           }}
         >
-          {personal.location}
+          Neo-Miami / {personal.location}
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
           <div
             style={{
               display: "flex",
-              fontSize: 96,
-              lineHeight: 1.05,
+              fontSize: 104,
+              fontWeight: 800,
+              lineHeight: 1,
               letterSpacing: "-0.02em",
-              color: "#1A1A1A",
+              textTransform: "uppercase",
+              color: "#ffffff",
             }}
           >
             {personal.name}
           </div>
-          <div
-            style={{
-              display: "flex",
-              fontSize: 32,
-              lineHeight: 1.4,
-              color: "#1A1A1A",
-              maxWidth: 900,
-            }}
-          >
+          <div style={{ display: "flex", fontSize: 30, lineHeight: 1.4, maxWidth: 860 }}>
             {hero.tagline}
           </div>
           <div
             style={{
               display: "flex",
-              fontSize: 22,
-              color: "#8B2635",
+              fontSize: 21,
+              color: "#ffffff",
               fontFamily: "monospace",
               letterSpacing: "0.05em",
             }}
